@@ -14,7 +14,6 @@ import { ArrowLeft, RotateCcw, Trophy } from "lucide-react";
 export default function HeadTail() {
   const [selectedValue, setSelectedValue] = useState<string>("");
   const [columns, setColumns] = useState<string[][]>([]);
-  const [lastValue, setLastValue] = useState<string>("");
   const [validationMessage, setValidationMessage] = useState<string>("");
 
   const handleSubmit = () => {
@@ -28,7 +27,6 @@ export default function HeadTail() {
     setColumns((prev) => {
       if (prev.length === 0) {
         // First value: create new column
-        setLastValue(selectedValue);
         return [[selectedValue]];
       }
 
@@ -40,11 +38,9 @@ export default function HeadTail() {
         const newColumns = [...prev];
         const lastColumnIndex = newColumns.length - 1;
         newColumns[lastColumnIndex] = [...newColumns[lastColumnIndex], selectedValue];
-        setLastValue(selectedValue);
         return newColumns;
       } else {
         // Different value: create new column
-        setLastValue(selectedValue);
         return [...prev, [selectedValue]];
       }
     });
@@ -54,7 +50,6 @@ export default function HeadTail() {
 
   const clearAll = () => {
     setColumns([]);
-    setLastValue("");
     setSelectedValue("");
     setValidationMessage("");
   };
