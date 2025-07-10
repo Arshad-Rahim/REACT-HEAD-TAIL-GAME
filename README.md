@@ -191,23 +191,6 @@ Local Development
 
 Follow the same steps as above, navigating to /head-tail via the app’s routing.
 
-Project Structure
-
-headtail-game/
-├── src/
-│   ├── components/
-│   │   ├── Home.jsx
-│   │   ├── About.jsx
-│   │   ├── HeadTail.tsx
-│   │   └── ui/ (Shadcn/UI components)
-│   ├── App.jsx
-│   ├── index.jsx
-│   ├── globals.css
-│   └── vite.config.js
-├── package.json
-├── tsconfig.json
-├── tailwind.config.js
-└── README.md
 
 Technologies Used
 
